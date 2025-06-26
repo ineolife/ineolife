@@ -1,17 +1,136 @@
-# Define the content of the HTML document again since it was not accessible via `document_text`
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asociația Ineolife Community</title>
-  ...
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header, footer { background: #2c3e50; color: white; padding: 2em 1em; text-align: center; }
+    nav { background: #34495e; padding: 1em; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .container { max-width: 1000px; margin: auto; padding: 2em; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #2c3e50; }
+    ul { padding-left: 1.5em; }
+    li { margin-bottom: 0.5em; }
+    .contact, .echipa, .galerie { margin-top: 3em; padding: 1em; background: #ecf0f1; border-radius: 8px; }
+    .slideshow-container { position: relative; max-width: 100%; margin: auto; }
+    .mySlides { display: none; }
+    .mySlides img { width: 100%; border-radius: 10px; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    @keyframes fade { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
+    @media (max-width: 600px) { .mySlides img { width: 100%; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Asociația Ineolife Community</h1>
+    <p>Împreună pentru o comunitate mai unită, educată și demnă.</p>
+  </header>
+
+  <nav>
+    <a href="#misiune">Misiune</a>
+    <a href="#despre">Despre noi</a>
+    <a href="#echipa">Echipa</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="misiune">
+      <h2>Misiunea noastră</h2>
+      <p>Asociația Ineolife Community este o organizație non-guvernamentală care promovează incluziunea socială și educația tinerilor și adulților de etnie romă din Cluj-Napoca și Cugir. Ne dorim să creăm un cadru sigur și inspirațional în care membrii comunităților vulnerabile să se dezvolte personal, social și profesional.</p>
+    </section>
+
+    <section id="despre">
+      <h2>Despre noi</h2>
+      <p>Înființată în 2024, Asociația Ineolife Community este alcătuită dintr-o echipă dedicată de profesioniști și voluntari care susțin educația informală, activități de dezvoltare personală, ateliere creative și implicare comunitară. Ne desfășurăm activitatea în special în zonele Pata Rât și Cugir, unde sprijinim adolescenți și familii în procesul lor de creștere și integrare.</p>
+    </section>
+
+    <section id="echipa" class="echipa">
+      <h2>Echipa noastră</h2>
+      <ul>
+        <li><strong>Zărnescu Onisim-Alexandru</strong> – Președinte</li>
+        <li><strong>Lupaș Dan-Soterius</strong> – Vicepreședinte</li>
+      </ul>
+    </section>
+
+    <section id="galerie" class="galerie">
+      <h2>Galerie foto</h2>
+      <div class="slideshow-container">
+        <div class="mySlides fade"><img src="img1.jpg" alt="activitate desen"><p style='text-align:center;'>Activitate de desen</p></div>
+        <div class="mySlides fade"><img src="img2.jpg" alt="lectură relaxată"><p style='text-align:center;'>Lectură relaxată în natură</p></div>
+        <div class="mySlides fade"><img src="img3.jpg" alt="zâmbet și implicare"><p style='text-align:center;'>Zâmbete și implicare activă</p></div>
+        <div class="mySlides fade"><img src="img4.jpg" alt="copii în natură"><p style='text-align:center;'>Copii explorând natura</p></div>
+        <div class="mySlides fade"><img src="img5.jpg" alt="dans și veselie"><p style='text-align:center;'>Dansuri și voie bună</p></div>
+        <div class="mySlides fade"><img src="img6.jpg" alt="copii citind"><p style='text-align:center;'>Copii descoperind lumea prin cărți</p></div>
+        <div class="mySlides fade"><img src="img7.jpg" alt="noapte comunitară"><p style='text-align:center;'>Noapte de povești și comunitate</p></div>
+        <div class="mySlides fade"><img src="img8.jpg" alt="bucurie în grup"><p style='text-align:center;'>Bucuria de a fi împreună</p></div>
+        <div class="mySlides fade"><img src="img9.jpg" alt="activitate creativă"><p style='text-align:center;'>Atelier de creație</p></div>
+        <div class="mySlides fade"><img src="img10.jpg" alt="echipă fotbal"><p style='text-align:center;'>Meci de fotbal între tineri</p></div>
+        <div class="mySlides fade"><img src="img11.jpg" alt="foc de tabără"><p style='text-align:center;'>Foc de tabără în comunitate</p></div>
+        <div class="mySlides fade"><img src="img12.jpg" alt="activitate manuală"><p style='text-align:center;'>Activitate creativă pentru copii</p></div>
+        <div class="mySlides fade"><img src="img13.jpg" alt="zâmbete în aer liber"><p style='text-align:center;'>Zâmbete în aer liber</p></div>
+        <div class="mySlides fade"><img src="img14.jpg" alt="echipă sportivă"><p style='text-align:center;'>Echipă sportivă unită</p></div>
+        <div class="mySlides fade"><img src="img15.jpg" alt="activitate în natură"><p style='text-align:center;'>Excursie și activități în natură</p></div>
+        <div class="mySlides fade"><img src="img16.jpg" alt="atelier creativ copii"><p style='text-align:center;'>Atelier creativ cu tinerii</p></div>
+        <div class="mySlides fade"><img src="img17.jpg" alt="selfie de grup vesel"><p style='text-align:center;'>Selfie de grup plin de voie bună</p></div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    <div style="text-align:center; margin-top: 1em;"><a href="#galerie" style="display:inline-block; background:#2c3e50; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">Vezi toată galeria</a></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p><strong>Telefon:</strong> 0754 428 296 (Razaila Alina)<br>
+         <strong>Telefon:</strong> 0784 521 960 (Zărnescu Onisim)<br>
+         <strong>Email:</strong> ineolifecommunity@gmail.com</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Asociația Ineolife Community. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      slides[slideIndex-1].style.display = "block";  
+    }
+  </script>
+</body>
 </html>
-'''  # The full content will be pasted in actual use
-
-# Save to file
-file_path = "/mnt/data/index.html"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-file_path
