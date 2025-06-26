@@ -1,132 +1,90 @@
-# Define full HTML content with CSS, JavaScript, and photo gallery included
-html_content_full = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Asociația Ineolife Community</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header, footer { background: #2c3e50; color: white; padding: 2em 1em; text-align: center; }
-    nav { background: #34495e; padding: 1em; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { max-width: 1000px; margin: auto; padding: 2em; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #2c3e50; }
-    ul { padding-left: 1.5em; }
-    li { margin-bottom: 0.5em; }
-    .contact, .echipa, .galerie { margin-top: 3em; padding: 1em; background: #ecf0f1; border-radius: 8px; }
-    .slideshow-container { position: relative; max-width: 100%; margin: auto; }
-    .mySlides { display: none; }
-    .mySlides img { width: 100%; border-radius: 10px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header, footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+    }
+    nav {
+      background: #34495e;
+      text-align: center;
+      padding: 1em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
+      border-radius: 10px;
+    }
     .prev, .next {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      width: auto;
       padding: 16px;
-      margin-top: -22px;
       color: white;
       font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
+      font-size: 24px;
       user-select: none;
+      transition: 0.3s;
+    }
+    .prev {
+      left: 0;
     }
     .next {
       right: 0;
-      border-radius: 3px 0 0 3px;
     }
     .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.6);
     }
-    @media (max-width: 600px) { .mySlides img { width: 100%; } }
+    .caption {
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    .contact, .echipa {
+      background: #ecf0f1;
+      padding: 1em;
+      border-radius: 10px;
+      margin-top: 3em;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Asociația Ineolife Community</h1>
-    <p>Împreună pentru o comunitate mai unită, educată și demnă.</p>
-  </header>
 
-  <nav>
-    <a href="#misiune">Misiune</a>
-    <a href="#despre">Despre noi</a>
-    <a href="#echipa">Echipa</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <section id="misiune">
-      <h2>Misiunea noastră</h2>
-      <p>Asociația Ineolife Community este o organizație non-guvernamentală care promovează incluziunea socială și educația tinerilor și adulților de etnie romă din Cluj-Napoca și Cugir.</p>
-    </section>
-
-    <section id="despre">
-      <h2>Despre noi</h2>
-      <p>Ne desfășurăm activitatea în special în zonele Pata Rât și Cugir, unde sprijinim adolescenți și familii în procesul lor de creștere și integrare.</p>
-    </section>
-
-    <section id="echipa" class="echipa">
-      <h2>Echipa noastră</h2>
-      <ul>
-        <li><strong>Zărnescu Onisim-Alexandru</strong> – Președinte</li>
-        <li><strong>Lupaș Dan-Soterius</strong> – Vicepreședinte</li>
-        <li><strong>Răzăilă Alina</strong> – Secretar</li>
-      </ul>
-    </section>
-
-    <section id="galerie" class="galerie">
-      <h2>Galerie foto</h2>
-      <div class="slideshow-container">
-        <div class="mySlides fade"><img src="img1.jpg" alt="activitate 1"><p style='text-align:center;'>Activitate 1</p></div>
-        <div class="mySlides fade"><img src="img2.jpg" alt="activitate 2"><p style='text-align:center;'>Activitate 2</p></div>
-        <div class="mySlides fade"><img src="img3.jpg" alt="activitate 3"><p style='text-align:center;'>Activitate 3</p></div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p><strong>Telefon:</strong> 0754 428 296 (Razaila Alina)<br>
-         <strong>Telefon:</strong> 0784 521 960 (Zărnescu Onisim)<br>
-         <strong>Email:</strong> ineolifecommunity@gmail.com</p>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Asociația Ineolife Community. Toate drepturile rezervate.</p>
-  </footer>
-
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex-1].style.display = "block";
-    }
-    // Start the slideshow on load
-    window.onload = function() {
-      showSlides(slideIndex);
-    };
-  </script>
-</body>
-</html>
-'''
-
-# Save the full HTML content to index.html
-final_path = "/mnt/data/index.html"
-with open(final_path, "w", encoding="utf-8") as f:
-    f.write(html_content_full)
-
-final_path
+<header>
+  <h1>Asociația Ineolife Community</h1>
+  <p>Împreună pentru o comunitate ma
