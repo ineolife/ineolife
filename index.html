@@ -14,8 +14,32 @@
     ul { padding-left: 1.5em; }
     li { margin-bottom: 0.5em; }
     .contact, .echipa, .galerie { margin-top: 3em; padding: 1em; background: #ecf0f1; border-radius: 8px; }
-    .galerie img { width: 200px; margin: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    @media (max-width: 600px) { .galerie img { width: 100%; } }
+    .slideshow-container { position: relative; max-width: 100%; margin: auto; }
+    .mySlides { display: none; }
+    .mySlides img { width: 100%; border-radius: 10px; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    @keyframes fade { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
+    @media (max-width: 600px) { .mySlides img { width: 100%; } }
   </style>
 </head>
 <body>
@@ -48,21 +72,33 @@
       <ul>
         <li><strong>Zărnescu Onisim-Alexandru</strong> – Președinte</li>
         <li><strong>Lupaș Dan-Soterius</strong> – Vicepreședinte</li>
-        <li><strong>Razăilă Alina Nicoleta</strong> – Secretar</li>
-              </ul>
+      </ul>
     </section>
 
     <section id="galerie" class="galerie">
       <h2>Galerie foto</h2>
-      <img src="img1.jpg" alt="activitate desen">
-      <img src="img2.jpg" alt="lectură relaxată">
-      <img src="img3.jpg" alt="zâmbet și implicare">
-      <img src="img4.jpg" alt="copii în natură">
-      <img src="img5.jpg" alt="dans și veselie">
-      <img src="img6.jpg" alt="copii citind">
-      <img src="img7.jpg" alt="noapte comunitară">
-      <img src="img8.jpg" alt="bucurie în grup">
-      <img src="img9.jpg" alt="activitate creativă">
+      <div class="slideshow-container">
+        <div class="mySlides fade"><img src="img1.jpg" alt="activitate desen"><p style='text-align:center;'>Activitate de desen</p></div>
+        <div class="mySlides fade"><img src="img2.jpg" alt="lectură relaxată"><p style='text-align:center;'>Lectură relaxată în natură</p></div>
+        <div class="mySlides fade"><img src="img3.jpg" alt="zâmbet și implicare"><p style='text-align:center;'>Zâmbete și implicare activă</p></div>
+        <div class="mySlides fade"><img src="img4.jpg" alt="copii în natură"><p style='text-align:center;'>Copii explorând natura</p></div>
+        <div class="mySlides fade"><img src="img5.jpg" alt="dans și veselie"><p style='text-align:center;'>Dansuri și voie bună</p></div>
+        <div class="mySlides fade"><img src="img6.jpg" alt="copii citind"><p style='text-align:center;'>Copii descoperind lumea prin cărți</p></div>
+        <div class="mySlides fade"><img src="img7.jpg" alt="noapte comunitară"><p style='text-align:center;'>Noapte de povești și comunitate</p></div>
+        <div class="mySlides fade"><img src="img8.jpg" alt="bucurie în grup"><p style='text-align:center;'>Bucuria de a fi împreună</p></div>
+        <div class="mySlides fade"><img src="img9.jpg" alt="activitate creativă"><p style='text-align:center;'>Atelier de creație</p></div>
+        <div class="mySlides fade"><img src="img10.jpg" alt="echipă fotbal"><p style='text-align:center;'>Meci de fotbal între tineri</p></div>
+        <div class="mySlides fade"><img src="img11.jpg" alt="foc de tabără"><p style='text-align:center;'>Foc de tabără în comunitate</p></div>
+        <div class="mySlides fade"><img src="img12.jpg" alt="activitate manuală"><p style='text-align:center;'>Activitate creativă pentru copii</p></div>
+        <div class="mySlides fade"><img src="img13.jpg" alt="zâmbete în aer liber"><p style='text-align:center;'>Zâmbete în aer liber</p></div>
+        <div class="mySlides fade"><img src="img14.jpg" alt="echipă sportivă"><p style='text-align:center;'>Echipă sportivă unită</p></div>
+        <div class="mySlides fade"><img src="img15.jpg" alt="activitate în natură"><p style='text-align:center;'>Excursie și activități în natură</p></div>
+        <div class="mySlides fade"><img src="img16.jpg" alt="atelier creativ copii"><p style='text-align:center;'>Atelier creativ cu tinerii</p></div>
+        <div class="mySlides fade"><img src="img17.jpg" alt="selfie de grup vesel"><p style='text-align:center;'>Selfie de grup plin de voie bună</p></div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    <div style="text-align:center; margin-top: 1em;"><a href="#galerie" style="display:inline-block; background:#2c3e50; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold;">Vezi toată galeria</a></div>
     </section>
 
     <section id="contact" class="contact">
@@ -76,5 +112,25 @@
   <footer>
     <p>&copy; 2025 Asociația Ineolife Community. Toate drepturile rezervate.</p>
   </footer>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      slides[slideIndex-1].style.display = "block";  
+    }
+  </script>
 </body>
 </html>
