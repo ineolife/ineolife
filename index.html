@@ -1,76 +1,79 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Asociația Ineolife Community</title>
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#f4f4f4; color:#333;}
-    header, footer { background:#2c3e50; color:white; text-align:center; padding:1.5em;}
-    nav { background:#34495e; text-align:center; padding:1em;}
-    nav a { color:white; margin:0 15px; font-weight:bold; text-decoration:none;}
-    .container { max-width:1000px; margin:auto; padding:2em; background:white;}
-    .slideshow-container { position:relative; margin:auto; max-width:100%;}
-    .mySlides { display:none;}
-    .mySlides img { width:100%; border-radius:10px;}
-    .prev, .next { cursor:pointer; position:absolute; top:50%; padding:16px; color:white; font-size:24px; user-select:none; }
-    .prev { left:0;} .next { right:0;}
-    .prev:hover, .next:hover { background:rgba(0,0,0,0.6);}
-    .caption { text-align:center; font-style:italic; margin-top:10px;}
-    .contact, .echipa { background:#ecf0f1; padding:1em; margin-top:3em; border-radius:10px;}
-  </style>
-</head>
-<body>
+/* Stil pentru Ineolife Community */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-<header>
-  <h1>Asociația Ineolife Community</h1>
-  <p>Împreună pentru o comunitate mai unită, educată și demnă.</p>
-</header>
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
 
-<nav>
-  <a href="#misiune">Misiune</a><a href="#despre">Despre</a><a href="#echipa">Echipa</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a>
-</nav>
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
-<div class="container">
-  <section id="misiune"><h2>Misiunea noastră</h2><p>Promovăm incluziunea socială și educația tinerilor și adulților din Cluj-Napoca și Cugir.</p></section>
-  <section id="despre"><h2>Despre noi</h2><p>Suntem o echipă dedicată în susținerea comunităților rome prin educație, ateliere și activități sociale.</p></section>
-  <section id="echipa" class="echipa"><h2>Echipa</h2><ul><li><strong>Zărnescu Onisim-Alexandru</strong> – Președinte</li><li><strong>Lupaș Dan-Soterius</strong> – Vicepreședinte</li><li><strong>Razaila Alina</strong> – Coordonator educațional</li></ul></section>
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  <section id="galerie">
-    <h2>Galerie foto</h2>
-    <div class="slideshow-container">
-      <!-- Copiază blocul de mai jos pentru fiecare imagine -->
-      <div class="mySlides"><img src="img1.jpg" alt="img1"><div class="caption">Activitate 1</div></div>
-      <!-- ... continuă până la img17 ... -->
-      <div class="mySlides"><img src="img17.jpg" alt="img17"><div class="caption">Activitate 17</div></div>
+nav ul li a:hover {
+  text-decoration: underline;
+}
 
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-  </section>
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  <section id="contact" class="contact"><h2>Contact</h2><p><strong>Telefon:</strong> 0754 428 296 (Razaila Alina)<br><strong>Email:</strong> ineolifecommunity@gmail.com</p></section>
-</div>
+h1, h2 {
+  color: #005F73;
+}
 
-<footer><p>&copy; 2025 Asociația Ineolife Community. Toate drepturile rezervate.</p></footer>
+ul {
+  padding-left: 20px;
+}
 
-<script>
-  let slideIndex = 0;
-  showSlides();
-  function showSlides() {
-    let slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].style.display = "block";
-    setTimeout(showSlides, 4000);
-  }
-  function plusSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    slides[slideIndex].style.display = "block";
-  }
-</script>
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
 
-</body>
-</html>
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galerie img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.galerie img:hover {
+  transform: scale(1.05);
+}
